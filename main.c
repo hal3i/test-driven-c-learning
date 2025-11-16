@@ -28,6 +28,17 @@ void test_div_operator()
     TEST_ASSERT_EQUAL(4, 8 / 2);
 }
 
+void test_data_type_size()
+{
+    TEST_ASSERT_EQUAL(1, sizeof(char));
+    TEST_ASSERT_EQUAL(2, sizeof(short));
+    TEST_ASSERT_EQUAL(4, sizeof(int));
+    TEST_ASSERT_EQUAL(4, sizeof(long));
+    TEST_ASSERT_EQUAL(8, sizeof(long long));
+    TEST_ASSERT_EQUAL(4, sizeof(float));
+    TEST_ASSERT_EQUAL(8, sizeof(double));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -35,5 +46,6 @@ int main(void)
     RUN_TEST(test_sub_operator);
     RUN_TEST(test_mul_operator);
     RUN_TEST(test_div_operator);
+    RUN_TEST(test_data_type_size);
     return UNITY_END();
 }
