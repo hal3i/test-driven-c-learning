@@ -39,6 +39,18 @@ void test_data_type_size()
     TEST_ASSERT_EQUAL(8, sizeof(double));
 }
 
+void test_shift_operators()
+{
+    TEST_ASSERT_EQUAL(0x02, 0x01 << 1);
+    TEST_ASSERT_EQUAL(0x04, 0x01 << 2);
+    TEST_ASSERT_EQUAL(0x08, 0x01 << 3);
+    TEST_ASSERT_EQUAL(0x10, 0x01 << 4);
+    TEST_ASSERT_EQUAL(0x08, 0x10 >> 1);
+    TEST_ASSERT_EQUAL(0x04, 0x10 >> 2);
+    TEST_ASSERT_EQUAL(0x02, 0x10 >> 3);
+    TEST_ASSERT_EQUAL(0x01, 0x10 >> 4);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -47,5 +59,6 @@ int main(void)
     RUN_TEST(test_mul_operator);
     RUN_TEST(test_div_operator);
     RUN_TEST(test_data_type_size);
+    RUN_TEST(test_shift_operators);
     return UNITY_END();
 }
