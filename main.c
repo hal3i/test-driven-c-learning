@@ -28,7 +28,7 @@ void test_div_operator()
     TEST_ASSERT_EQUAL(4, 8 / 2);
 }
 
-void test_data_type_size()
+void test_size_operator()
 {
     TEST_ASSERT_EQUAL(1, sizeof(char));
     TEST_ASSERT_EQUAL(2, sizeof(short));
