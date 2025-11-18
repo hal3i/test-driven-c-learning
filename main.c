@@ -8,27 +8,20 @@ void tearDown(void)
 {
 }
 
-void test_add_operator(void)
+void test_additive_operators(void)
 {
     TEST_ASSERT_EQUAL(7, 5 + 2);
-}
-
-void test_sub_operator(void)
-{
     TEST_ASSERT_EQUAL(3, 5 - 2);
 }
 
-void test_mul_operator()
+void test_multiplicative_operators(void)
 {
     TEST_ASSERT_EQUAL(6, 2 * 3);
-}
-
-void test_div_operator()
-{
     TEST_ASSERT_EQUAL(4, 8 / 2);
+    TEST_ASSERT_EQUAL(1, 5 % 2);
 }
 
-void test_size_operator()
+void test_size_operator(void)
 {
     TEST_ASSERT_EQUAL(1, sizeof(char));
     TEST_ASSERT_EQUAL(2, sizeof(short));
@@ -39,7 +32,7 @@ void test_size_operator()
     TEST_ASSERT_EQUAL(8, sizeof(double));
 }
 
-void test_shift_operators()
+void test_shift_operators(void)
 {
     TEST_ASSERT_EQUAL(0x02, 0x01 << 1);
     TEST_ASSERT_EQUAL(0x04, 0x01 << 2);
@@ -51,14 +44,61 @@ void test_shift_operators()
     TEST_ASSERT_EQUAL(0x01, 0x10 >> 4);
 }
 
+void test_relational_operators(void)
+{
+    TEST_ASSERT_TRUE(1 < 2);
+    TEST_ASSERT_FALSE(1 < 1);
+
+    TEST_ASSERT_TRUE(2 > 1);
+    TEST_ASSERT_FALSE(1 > 1);
+
+    TEST_ASSERT_TRUE(1 <= 2);
+    TEST_ASSERT_TRUE(1 <= 1);
+
+    TEST_ASSERT_TRUE(2 >= 1);
+    TEST_ASSERT_TRUE(1 >= 1);
+
+    TEST_ASSERT_TRUE(1 == 1);
+
+    TEST_ASSERT_TRUE(1 != 2);
+    TEST_ASSERT_FALSE(1 != 1);
+}
+
+void test_bitwise_operators(void)
+{
+    TEST_ASSERT_EQUAL(0x0000, 0xFFFF & 0x0000);
+    TEST_ASSERT_EQUAL(0xFFFF, 0xFFFF | 0x0000);
+    TEST_ASSERT_EQUAL(0x0F0F, 0xFFFF ^ 0xF0F0);
+}
+
+void test_logical_operators(void)
+{
+    TEST_ASSERT_TRUE(1 == 1 && 2 == 2);
+    TEST_ASSERT_FALSE(1 == 1 && 2 != 2);
+
+    TEST_ASSERT_TRUE(1 == 1 || 2 != 2);
+    TEST_ASSERT_FALSE(1 != 1 || 2 != 2);
+}
+
+void test_sequential_evaluation_operator(void)
+{
+    int a = 1;
+    int b = 2;
+    int x = (a, b);     // x = a, x = b;
+
+    TEST_ASSERT_TRUE(2, x);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
-    RUN_TEST(test_add_operator);
-    RUN_TEST(test_sub_operator);
-    RUN_TEST(test_mul_operator);
-    RUN_TEST(test_div_operator);
-    RUN_TEST(test_data_type_size);
+    RUN_TEST(test_additive_operators);
+    RUN_TEST(test_multiplicative_operators);
+    RUN_TEST(test_size_operator);
     RUN_TEST(test_shift_operators);
+    RUN_TEST(test_relational_operators);
+    RUN_TEST(test_bitwise_operators);
+    RUN_TEST(test_logical_operators);
+    RUN_TEST(test_sequential_evaluation_operator);
     return UNITY_END();
 }
