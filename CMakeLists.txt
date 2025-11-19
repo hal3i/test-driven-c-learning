@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(test-driven-c-learning VERSION 0.1.0 LANGUAGES C)
 enable_testing()
-add_executable(${PROJECT_NAME} Unity/unity.c main.c)
-add_test(NAME unittest COMMAND ${PROJECT_NAME})
+include_directories(Unity)
+add_executable(${PROJECT_NAME} Unity/unity.c TestOperators.c test_runners/TestOperators_Runner.c)
+add_test(NAME TestOperators COMMAND ${PROJECT_NAME})
