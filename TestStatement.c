@@ -18,3 +18,18 @@ void test_if_Statement(void)
         TEST_PASS();
     }
 }
+
+void test_for_statement(void)
+{
+    int expected = 1 + 2 + 3;
+    int actual = 0;
+    int i;
+
+    for (i = 1; i < 4; i++)
+    {
+        actual += i;
+    }
+
+    TEST_ASSERT_EQUAL(4, i);
+    TEST_ASSERT_EQUAL(expected, actual);
+}
