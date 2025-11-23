@@ -8,6 +8,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_if_Statement(void);
 extern void test_for_statement(void);
+extern void test_switch_statement(void);
 
 
 /*=======Mock Management=====*/
@@ -77,6 +78,7 @@ int main(void)
   UnityBegin("TestStatement.c");
   run_test(test_if_Statement, "test_if_Statement", 3);
   run_test(test_for_statement, "test_for_statement", 22);
+  run_test(test_switch_statement, "test_switch_statement", 37);
 
   return UNITY_END();
 }

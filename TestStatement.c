@@ -33,3 +33,51 @@ void test_for_statement(void)
     TEST_ASSERT_EQUAL(4, i);
     TEST_ASSERT_EQUAL(expected, actual);
 }
+
+void test_switch_statement(void)
+{
+    int actual = 0;
+    char c = 'a';
+    switch (c) {
+        case 'a':
+            actual = 1;
+            break;
+        case 'b':
+            actual = 2;
+            break;
+        case 'c':
+            actual = 3;
+            break;
+        default:
+            actual = 4;
+    }
+
+    TEST_ASSERT_EQUAL(1, actual);
+
+    int n = 2;
+    switch (n) {
+        case 0:
+            actual++;
+        case 1:
+            actual++;
+        case 2:
+            actual++;
+        case 3:
+            actual++;
+        case 4:
+            actual++;
+    }
+
+    TEST_ASSERT_EQUAL(4, actual);
+
+    n = 1;
+    switch (n) {
+        case 0:
+            actual++;
+            break;
+        default:
+            actual = -1;
+    }
+
+    TEST_ASSERT_EQUAL(-1, actual);
+}
