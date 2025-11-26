@@ -81,3 +81,27 @@ void test_switch_statement(void)
 
     TEST_ASSERT_EQUAL(-1, actual);
 }
+
+void test_do_while_statement(void)
+{
+    int i = 3;
+
+    do {
+        i = i - 1;
+    } while (i > 0);
+
+    TEST_ASSERT_EQUAL(0, i);
+}
+
+void test_break_statement(void)
+{
+    int i = 0;
+
+    for (;;) {
+        if (i++ == 5) {
+            break;
+        }
+    }
+
+    TEST_ASSERT_EQUAL(6, i);
+}

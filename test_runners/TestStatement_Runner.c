@@ -10,6 +10,7 @@ extern void test_if_Statement(void);
 extern void test_for_statement(void);
 extern void test_switch_statement(void);
 extern void test_do_while_statement(void);
+extern void test_break_statement(void);
 
 
 /*=======Mock Management=====*/
@@ -81,6 +82,7 @@ int main(void)
   run_test(test_for_statement, "test_for_statement", 22);
   run_test(test_switch_statement, "test_switch_statement", 37);
   run_test(test_do_while_statement, "test_do_while_statement", 85);
+  run_test(test_break_statement, "test_break_statement", 96);
 
   return UNITY_END();
 }
