@@ -13,6 +13,21 @@ void test_MultiplicativeOperators(void)
     TEST_ASSERT_EQUAL(1, 5 % 2);
 }
 
+void test_IncrementAndDecrementOperators(void)
+{
+    int a = 1;
+
+    TEST_ASSERT_EQUAL(1, a++);
+    TEST_ASSERT_EQUAL(2, a);
+    TEST_ASSERT_EQUAL(3, ++a);
+    TEST_ASSERT_EQUAL(3, a);
+
+    TEST_ASSERT_EQUAL(3, a--);
+    TEST_ASSERT_EQUAL(2, a);
+    TEST_ASSERT_EQUAL(1, --a);
+    TEST_ASSERT_EQUAL(1, a);
+}
+
 void test_SizeOperator(void)
 {
     TEST_ASSERT_EQUAL(1, sizeof(char));

@@ -8,6 +8,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_AdditiveOperators(void);
 extern void test_MultiplicativeOperators(void);
+extern void test_IncrementAndDecrementOperators(void);
 extern void test_SizeOperator(void);
 extern void test_ShiftOperators(void);
 extern void test_RelationalOperators(void);
@@ -83,12 +84,13 @@ int main(void)
   UnityBegin("TestOperators.c");
   run_test(test_AdditiveOperators, "test_AdditiveOperators", 3);
   run_test(test_MultiplicativeOperators, "test_MultiplicativeOperators", 9);
-  run_test(test_SizeOperator, "test_SizeOperator", 16);
-  run_test(test_ShiftOperators, "test_ShiftOperators", 27);
-  run_test(test_RelationalOperators, "test_RelationalOperators", 39);
-  run_test(test_BitwiseOperators, "test_BitwiseOperators", 59);
-  run_test(test_LogicalOperators, "test_LogicalOperators", 66);
-  run_test(test_SequentialEvaluationOperator, "test_SequentialEvaluationOperator", 75);
+  run_test(test_IncrementAndDecrementOperators, "test_IncrementAndDecrementOperators", 16);
+  run_test(test_SizeOperator, "test_SizeOperator", 31);
+  run_test(test_ShiftOperators, "test_ShiftOperators", 42);
+  run_test(test_RelationalOperators, "test_RelationalOperators", 54);
+  run_test(test_BitwiseOperators, "test_BitwiseOperators", 74);
+  run_test(test_LogicalOperators, "test_LogicalOperators", 81);
+  run_test(test_SequentialEvaluationOperator, "test_SequentialEvaluationOperator", 90);
 
   return UNITY_END();
 }
