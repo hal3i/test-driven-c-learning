@@ -105,3 +105,18 @@ void test_break_statement(void)
 
     TEST_ASSERT_EQUAL(6, i);
 }
+
+void test_goto_and_labeled_statements(void)
+{
+    int i = 0;
+
+    for (;;) {
+        if (++i == 3) {
+            goto hoge;
+        }
+    }
+
+    TEST_FAIL();
+
+    hoge: TEST_ASSERT_EQUAL(3, i);
+}
