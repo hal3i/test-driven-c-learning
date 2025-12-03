@@ -95,3 +95,16 @@ void test_SequentialEvaluationOperator(void)
 
     TEST_ASSERT_EQUAL(2, x);
 }
+
+void test_TernaryOperator(void)
+{
+    int a = 3;
+    int b = a < 5 ? 0 : 10;
+
+    TEST_ASSERT_EQUAL(b, 0);
+
+    a = 7;
+    b = a < 5 ? 0 : 10;
+
+    TEST_ASSERT_EQUAL(b, 10);
+}

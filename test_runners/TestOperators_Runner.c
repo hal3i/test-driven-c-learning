@@ -15,6 +15,7 @@ extern void test_RelationalOperators(void);
 extern void test_BitwiseOperators(void);
 extern void test_LogicalOperators(void);
 extern void test_SequentialEvaluationOperator(void);
+extern void test_TernaryOperator(void);
 
 
 /*=======Mock Management=====*/
@@ -91,6 +92,7 @@ int main(void)
   run_test(test_BitwiseOperators, "test_BitwiseOperators", 74);
   run_test(test_LogicalOperators, "test_LogicalOperators", 81);
   run_test(test_SequentialEvaluationOperator, "test_SequentialEvaluationOperator", 90);
+  run_test(test_TernaryOperator, "test_TernaryOperator", 99);
 
   return UNITY_END();
 }
