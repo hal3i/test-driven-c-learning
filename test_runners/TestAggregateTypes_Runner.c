@@ -7,6 +7,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_array_initialization(void);
+extern void test_2d_array_initialization(void);
 
 
 /*=======Mock Management=====*/
@@ -75,6 +76,7 @@ int main(void)
 {
   UnityBegin("TestAggregateTypes.c");
   run_test(test_array_initialization, "test_array_initialization", 3);
+  run_test(test_2d_array_initialization, "test_2d_array_initialization", 21);
 
   return UNITY_END();
 }
