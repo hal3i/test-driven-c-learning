@@ -37,3 +37,27 @@ void test_2d_array_initialization(void)
     TEST_ASSERT_EQUAL(A[1][1], B[1][1]);
     TEST_ASSERT_EQUAL(A[1][2], B[1][2]);
 }
+
+void test_struct_initialization(void)
+{
+    struct Point {
+        int x, y;
+    };
+
+    struct Point point1;
+    point1.x = 1;
+    point1.y = 2;
+
+    TEST_ASSERT_EQUAL(1, point1.x);
+    TEST_ASSERT_EQUAL(2, point1.y);
+
+    struct Point point2 = { .x = 1, .y = 2 };
+
+    TEST_ASSERT_EQUAL(1, point2.x);
+    TEST_ASSERT_EQUAL(2, point2.y);
+
+    struct Point point3 = { 1, 2 };
+    
+    TEST_ASSERT_EQUAL(1, point3.x);
+    TEST_ASSERT_EQUAL(2, point3.y);
+}
