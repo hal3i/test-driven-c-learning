@@ -9,6 +9,7 @@ extern void tearDown(void);
 extern void test_array_initialization(void);
 extern void test_2d_array_initialization(void);
 extern void test_struct_initialization(void);
+extern void test_union_initialization(void);
 
 
 /*=======Mock Management=====*/
@@ -79,6 +80,7 @@ int main(void)
   run_test(test_array_initialization, "test_array_initialization", 3);
   run_test(test_2d_array_initialization, "test_2d_array_initialization", 21);
   run_test(test_struct_initialization, "test_struct_initialization", 41);
+  run_test(test_union_initialization, "test_union_initialization", 65);
 
   return UNITY_END();
 }

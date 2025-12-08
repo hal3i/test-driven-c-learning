@@ -61,3 +61,22 @@ void test_struct_initialization(void)
     TEST_ASSERT_EQUAL(1, point3.x);
     TEST_ASSERT_EQUAL(2, point3.y);
 }
+
+void test_union_initialization(void)
+{
+    union Register {
+        unsigned int ports;
+        struct {
+            unsigned short b;
+            unsigned short a;
+        } port;
+    };
+
+    union Register io;
+
+    io.ports = 0xAAAA5555;
+
+    TEST_ASSERT_EQUAL(0xAAAA5555, io.ports);
+    TEST_ASSERT_EQUAL(0xAAAA, io.port.a);
+    TEST_ASSERT_EQUAL(0x5555, io.port.b);
+}
