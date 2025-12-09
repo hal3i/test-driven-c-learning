@@ -36,3 +36,14 @@ void test_func_factorial(void)
     
     TEST_ASSERT_NOT_EQUAL(87178291200, factorial(13));  // !!
 }
+
+void test_function_pointer(void)
+{
+    int(*add_func)(int, int);
+    
+    add_func = add;
+
+    int actual = add_func(1, 2);
+    
+    TEST_ASSERT_EQUAL(3, actual);
+}

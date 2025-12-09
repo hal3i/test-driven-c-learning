@@ -8,6 +8,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_func_add(void);
 extern void test_func_factorial(void);
+extern void test_function_pointer(void);
 
 
 /*=======Mock Management=====*/
@@ -77,6 +78,7 @@ int main(void)
   UnityBegin("TestFunction.c");
   run_test(test_func_add, "test_func_add", 16);
   run_test(test_func_factorial, "test_func_factorial", 25);
+  run_test(test_function_pointer, "test_function_pointer", 39);
 
   return UNITY_END();
 }
