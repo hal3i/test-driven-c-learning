@@ -6,9 +6,7 @@
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_func_add(void);
-extern void test_func_factorial(void);
-extern void test_function_pointer(void);
+extern void test_define_drective(void);
 
 
 /*=======Mock Management=====*/
@@ -75,10 +73,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("TestFunction.c");
-  run_test(test_func_add, "test_func_add", 16);
-  run_test(test_func_factorial, "test_func_factorial", 25);
-  run_test(test_function_pointer, "test_function_pointer", 40);
+  UnityBegin("TestPreprocessor.c");
+  run_test(test_define_drective, "test_define_drective", 5);
 
   return UNITY_END();
 }
