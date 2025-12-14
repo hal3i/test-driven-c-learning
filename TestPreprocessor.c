@@ -13,3 +13,33 @@ void test_define_drective(void)
     TEST_ASSERT_EQUAL(960, total_set_a);
     TEST_ASSERT_EQUAL(560, total_set_b);
 }
+
+void test_if_directive(void)
+{
+#if 1
+    TEST_PASS();
+#elif 1
+    TEST_FAIL();
+#else
+    TEST_FAIL();
+#endif
+    TEST_PASS();
+
+#if 0
+    TEST_FAIL();
+#elif 1
+    TEST_PASS();
+#else
+    TEST_FAIL();
+#endif
+    TEST_PASS();
+
+#if 0
+    TEST_FAIL();
+#elif 0
+    TEST_FAIL();
+#else
+    TEST_PASS();
+#endif
+    TEST_PASS();
+}

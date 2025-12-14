@@ -7,6 +7,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_define_drective(void);
+extern void test_if_directive(void);
 
 
 /*=======Mock Management=====*/
@@ -74,7 +75,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestPreprocessor.c");
-  run_test(test_define_drective, "test_define_drective", 5);
+  run_test(test_define_drective, "test_define_drective", 8);
+  run_test(test_if_directive, "test_if_directive", 17);
 
   return UNITY_END();
 }
