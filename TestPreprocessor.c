@@ -43,3 +43,20 @@ void test_if_directive(void)
 #endif
     TEST_PASS();
 }
+
+void test_defined_undef_directive(void)
+{
+#define DEBUG
+#if defined(DEBUG)
+    TEST_PASS();
+#else
+    TEST_FAIL();
+#endif
+
+#undef DEBUG
+#if defined(DEBUG)
+    TEST_FAIL();
+#else
+    TEST_PASS();
+#endif
+}
