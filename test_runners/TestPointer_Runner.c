@@ -7,6 +7,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_pointer(void);
+extern void test_pointer_and_array(void);
 
 
 /*=======Mock Management=====*/
@@ -75,6 +76,7 @@ int main(void)
 {
   UnityBegin("TestPointer.c");
   run_test(test_pointer, "test_pointer", 3);
+  run_test(test_pointer_and_array, "test_pointer_and_array", 17);
 
   return UNITY_END();
 }
