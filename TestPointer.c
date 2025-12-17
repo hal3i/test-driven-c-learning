@@ -36,3 +36,14 @@ void test_pointer_and_array(void)
     TEST_ASSERT_EQUAL(1, *(px + 1));
     TEST_ASSERT_EQUAL(2, *(px + 2));
 }
+
+void test_convertion_int_to_char_pointer(void)
+{
+    int x = 0x12345678;
+    char *p = (char*)&x;
+
+    TEST_ASSERT_EQUAL(0x78, *p);
+    TEST_ASSERT_EQUAL(0x56, *(p + 1));
+    TEST_ASSERT_EQUAL(0x34, *(p + 2));
+    TEST_ASSERT_EQUAL(0x12, *(p + 3));
+}
