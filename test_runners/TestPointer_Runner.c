@@ -9,6 +9,7 @@ extern void tearDown(void);
 extern void test_pointer(void);
 extern void test_pointer_and_array(void);
 extern void test_convertion_int_to_char_pointer(void);
+extern void test_convertion_char_to_int_pointer(void);
 
 
 /*=======Mock Management=====*/
@@ -79,6 +80,7 @@ int main(void)
   run_test(test_pointer, "test_pointer", 3);
   run_test(test_pointer_and_array, "test_pointer_and_array", 17);
   run_test(test_convertion_int_to_char_pointer, "test_convertion_int_to_char_pointer", 40);
+  run_test(test_convertion_char_to_int_pointer, "test_convertion_char_to_int_pointer", 51);
 
   return UNITY_END();
 }

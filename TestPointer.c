@@ -47,3 +47,12 @@ void test_convertion_int_to_char_pointer(void)
     TEST_ASSERT_EQUAL(0x34, *(p + 2));
     TEST_ASSERT_EQUAL(0x12, *(p + 3));
 }
+
+void test_convertion_char_to_int_pointer(void)
+{
+    char a[8] = { 0x67, 0x45, 0x23, 0x01, 0xEF, 0xCD, 0xAB, 0x89 };
+    unsigned int *p = (unsigned int*)&a;
+
+    TEST_ASSERT_EQUAL(0x01234567, *p);
+    TEST_ASSERT_EQUAL(0x89ABCDEF, *(p + 1));
+}
