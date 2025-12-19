@@ -9,6 +9,7 @@ extern void tearDown(void);
 extern void test_define_drective(void);
 extern void test_if_directive(void);
 extern void test_defined_undef_directive(void);
+extern void test_ifndef_directive(void);
 
 
 /*=======Mock Management=====*/
@@ -79,6 +80,7 @@ int main(void)
   run_test(test_define_drective, "test_define_drective", 8);
   run_test(test_if_directive, "test_if_directive", 17);
   run_test(test_defined_undef_directive, "test_defined_undef_directive", 47);
+  run_test(test_ifndef_directive, "test_ifndef_directive", 64);
 
   return UNITY_END();
 }

@@ -60,3 +60,15 @@ void test_defined_undef_directive(void)
     TEST_PASS();
 #endif
 }
+
+void test_ifndef_directive(void)
+{
+#ifndef DEBUG
+#define DEBUG
+    TEST_PASS();
+#endif
+
+#ifndef DEBUG
+    TEST_FAIL();
+#endif
+}
