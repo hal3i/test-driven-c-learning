@@ -120,3 +120,20 @@ void test_goto_and_labeled_statements(void)
 
     hoge: TEST_ASSERT_EQUAL(3, i);
 }
+
+void test_continue_statements(void)
+{
+    char x[4] = {0, 1, 2, 3};
+
+    for (int i = 0; i < 4; i++){
+        if ((i % 2) == 0) {
+            continue;
+        }
+        x[i] += i;
+    }
+
+    TEST_ASSERT_EQUAL(0, x[0]);
+    TEST_ASSERT_EQUAL(2, x[1]);
+    TEST_ASSERT_EQUAL(2, x[2]);
+    TEST_ASSERT_EQUAL(6, x[3]);
+}
