@@ -1,3 +1,4 @@
 {
-    "cmake.outputLogEncoding": "utf-8"
+    "cmake.outputLogEncoding": "utf-8",
+    "cmake.ctest.allowParallelJobs": true
 }
