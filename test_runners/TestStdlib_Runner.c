@@ -8,6 +8,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_string_convertion(void);
+extern void test_abs(void);
 
 
 /*=======Mock Management=====*/
@@ -76,6 +77,7 @@ int main(void)
 {
   UnityBegin("TestStdlib.c");
   run_test(test_string_convertion, "test_string_convertion", 4);
+  run_test(test_abs, "test_abs", 18);
 
   return UNITY_END();
 }

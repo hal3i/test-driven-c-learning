@@ -14,3 +14,12 @@ void test_string_convertion(void)
     TEST_ASSERT_EQUAL(7.8,   strtod("7.8", NULL));
     TEST_ASSERT_EQUAL(9.012, strtold("9.012", NULL));
 }
+
+void test_abs(void)
+{
+    int a = abs(5);
+    int b = abs(-3);
+
+    TEST_ASSERT_EQUAL(5, a);
+    TEST_ASSERT_EQUAL(3, b);
+}
